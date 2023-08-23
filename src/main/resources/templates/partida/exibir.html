@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Dados do partida</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Dados do Partida</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><strong>#ID</strong></th>
+        <th>Local</th>
+        <th>Hora Início</th>
+        <th>Hora Final</th>
+        <th>Duração</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr th:each="partida : ${partidas}">
+            <td th:text="${partida.getId()}"></td>
+            <td th:text="${partida.getLocal()}"></td>
+            <td th:text="${partida.getHoraInicio()}"></td>
+            <td th:text="${partida.getHoraFim()}"></td>
+            <td th:text="${partida.getDuracao()}"></td>
+          </tr>
+    </tbody>
+  </table>
+  <a href="../partidas"><button class="btn btn-success">Cadastrar nova partida</button></a>
+</div>
+
+</body>
+</html>

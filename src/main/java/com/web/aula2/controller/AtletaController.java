@@ -28,7 +28,4 @@ public class AtletaController {
         model.addAttribute("atletas", atletas);
         return "atleta/exibir";
     }
-
-
-
 }
